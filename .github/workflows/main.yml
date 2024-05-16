@@ -44,7 +44,7 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: "753743851231.dkr.ecr.us-east-2.amazonaws.com/123456789"
+        tags: "753743851231.dkr.ecr.us-east-2.amazonaws.com/123456789:${{ github.run_number }}"
 
 
      
