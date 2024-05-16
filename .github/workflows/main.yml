@@ -12,7 +12,7 @@ on:
 #   ECR_REPOSITORY: flask-app
 #   EKS_CLUSTER_NAME: Kubernetes-demo 
 #   AWS_REGION: us-east-1
-
+#   BRANCH_NAME = 
 
 jobs:
   build:
@@ -43,7 +43,7 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: "753743851231.dkr.ecr.us-east-2.amazonaws.com/123456789:latest"
+        tags: "753743851231.dkr.ecr.us-east-2.amazonaws.com/123456789:${BRANCH_NAME}"
 
 
      
