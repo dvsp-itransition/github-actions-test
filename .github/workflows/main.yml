@@ -8,6 +8,12 @@ on:
     branches:
       - "main"
 
+# env:
+#   ECR_REPOSITORY: flask-app
+#   EKS_CLUSTER_NAME: Kubernetes-demo 
+#   AWS_REGION: us-east-1
+
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,9 +21,8 @@ jobs:
     -
       name: Checkout
       uses: actions/checkout@v4
-    -
-      # Add support for more platforms with QEMU (optional)      
-      name: Set up QEMU
+    -          
+      name: Set up QEMU  # Add support for more platforms with QEMU (optional) 
       uses: docker/setup-qemu-action@v3   
     -
       name: Set up Docker Buildx
@@ -38,7 +43,7 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: "753743851231.dkr.ecr.us-east-2.amazonaws.com/123456789:v1"
+        tags: "753743851231.dkr.ecr.us-east-2.amazonaws.com/123456789:latest"
 
 
      
